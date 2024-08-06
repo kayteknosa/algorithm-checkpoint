@@ -1,0 +1,30 @@
+ALGORITHM length_of_sentence
+VAR INTEGER
+    length_counter = 0 
+word_counter = 0 
+vowel_counter = 0 
+in_word = False 
+
+BEGIN
+    while char != '.':
+    length_counter += 1
+
+    if char in 'aeiouAEIOU':
+        vowel_counter += 1
+
+    if char == ' ':
+        if in_word:
+            word_counter += 1
+            in_word = False
+    else:
+        in_word = True
+
+    char = read_character()
+    if in_word:
+    word_counter += 1
+
+    write('Length of the sentence:', length_counter)
+write('Number of words in the sentence:', word_counter)
+write('Number of vowels in the sentence:', vowel_counter)
+
+END
